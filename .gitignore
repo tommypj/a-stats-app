@@ -1,0 +1,13 @@
+Node
+node_modules
+npm-debug.log
+.env
+
+Firebase
+.firebase/
+firebase-debug.log
+firebase-key.json
+
+Build directories
+frontend-app/public/app.bundle.js
+frontend-app/public/app.bundle.js.map

@@ -1,0 +1,30 @@
+    {
+      "name": "a-stats-app",
+      "version": "1.1.1",
+      "private": false,
+      "description": "AI-powered blog article generator backend (Cloud Run)",
+      "main": "index.js",
+      "scripts": {
+        "start": "node index.js"
+      },
+      "dependencies": {
+        "@google-cloud/logging-winston": "^6.0.0",
+        "@google-cloud/secret-manager": "^5.0.0",
+        "@google/generative-ai": "^0.2.0",
+        "compression": "^1.7.4",
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.5",
+        "express": "^4.18.2",
+        "express-async-handler": "^1.2.0",
+        "express-rate-limit": "^7.1.5",
+        "firebase-admin": "^13.4.0",
+        "helmet": "^7.1.0",
+        "joi": "^17.11.0",
+        "jsdom": "^26.1.0",
+        "winston": "^3.11.0"
+      },
+      "engines": {
+        "node": ">=18.0.0"
+      }
+    }
+    

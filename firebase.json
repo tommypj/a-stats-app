@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "public": "frontend-app/public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
+  "functions": [
+    {
+      "source": "backend",
+      "codebase": "backend",
+      "runtime": "nodejs18"
+    }
+  ]
+}
