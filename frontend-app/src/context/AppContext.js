@@ -6,8 +6,9 @@ import { generateStep1, generateStep2, generateStep3, generateStep4, generateSte
 
 const AppContext = createContext();
 
-const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
-const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+// CRITICAL FIX: The firebaseConfig is already a JS object, so no need to parse it.
+const firebaseConfig = typeof window.__firebase_config !== 'undefined' ? window.__firebase_config : {};
+const appId = typeof window.__app_id !== 'undefined' ? window.__app_id : 'default-app-id';
 
 const initialState = {
   loading: false,
