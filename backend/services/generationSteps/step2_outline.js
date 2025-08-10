@@ -9,5 +9,5 @@ Returnează JSON strict: {"structura_articol": [{"titlu_h2": "...", "subteme_h3"
 
     const resultText = await generateContent(prompt, 'Etapa 2', userId);
     const parsed = parseGeminiJSON(resultText, 'Etapa 2');
-    return validator.validateStepResponse(parsed, 2);
+    return validator.validateStepResult(parsed, 2);
 };

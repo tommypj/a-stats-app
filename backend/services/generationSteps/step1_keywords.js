@@ -26,5 +26,5 @@ Alege cel mai bun subiect și set de cuvinte cheie din lista generată, justific
     // CRITICAL FIX: The original code had a TypeError here.
     // We must call the 'validate' method from the validator instance
     // and pass the correct schema for Step 1.
-    return validator.validate(validator.step1Schema, parsed);
+    return validator.validate(validator.step1ResultSchema, parsed);
 };

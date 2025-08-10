@@ -5,5 +5,5 @@ module.exports = async (model, finalSubject, articleOutline, userId, generateCon
 
     const resultText = await generateContent(prompt, 'Etapa 3', userId);
     const parsed = parseGeminiJSON(resultText, 'Etapa 3');
-    return validator.validateStepResponse(parsed, 3);
+    return validator.validateStepResult(parsed, 3);
 };
