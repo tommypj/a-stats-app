@@ -75,11 +75,20 @@ class InputValidator {
     });
   }
 
-  validateStep1Request(data) { return this.validate(this.step1RequestSchema, data); }
-  validateStep2Request(data) { return this.validate(this.step2Schema, data); }
-  validateStep3Request(data) { return this.validate(this.step3Schema, data); }
-  validateStep4Request(data) { return this.validate(this.step4Schema, data); }
-  validateStep5Request(data) { return this.validate(this.step5Schema, data); }
+   validateStep1Request(data) { return this.validate(this.step1RequestSchema, data); }
+   validateStep2Request(data) { return this.validate(this.step2Schema, data); }
+   validateStep3Request(data) { return this.validate(this.step3Schema, data); }
+
+   // RESULT validators
+   validateStep1Result(data) { return this.validate(this.step1ResultSchema, data); }
+   validateStep2Result(data) { return this.validate(this.step2ResultSchema, data); }
+   validateStep3Result(data) { return this.validate(this.step3ResultSchema, data); }
+   validateStep4Request(data) { return this.validate(this.step4Schema, data); }
+   validateStep5Request(data) { return this.validate(this.step5Schema, data); }
+
+    validateStepResult(data) { 
+    return this.validateStep2Result(data); 
+  }
 
   validate(schema, data) {
     const { error, value } = schema.validate(data);
