@@ -1,7 +1,7 @@
 {
   "hosting": {
     "public": "frontend-app/public",
-    "site": "a-stats-2e54e-dae91",
+    "site": "a-stats-2e54e",
     "ignore": [
       "firebase.json",
       "**/.*",

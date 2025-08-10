@@ -1,8 +1,7 @@
 // backend/utils/logger.js
 const winston = require('winston');
-const { LoggingWinston } = require('@google-cloud/logging-winston');
 
-// A simple utility to measure and log function execution time.
+// Simple utility to measure and log function execution time
 exports.createTimer = (label) => {
     const start = process.hrtime();
     return {
@@ -17,27 +16,25 @@ exports.createTimer = (label) => {
     };
 };
 
-const loggingWinston = new LoggingWinston({
-    level: 'info'
-});
-
+// Simplified logger that works in all environments
 exports.logger = winston.createLogger({
-    level: 'info', // Adjust the log level as needed
+    level: 'info',
+    format: winston.format.combine(
+        winston.format.timestamp(),
+        winston.format.json()
+    ),
     transports: [
-        // Log to the console for local development
+        // Console logging for both development and production
         new winston.transports.Console({
             format: winston.format.combine(
                 winston.format.colorize(),
                 winston.format.simple()
             ),
-        }),
-        // Log to Google Cloud Logging in production
-        loggingWinston,
+        })
+        // Removed Google Cloud Logging for now to avoid the error
     ],
-    // The default format for logs sent to Cloud Logging
-    format: winston.format.json(),
     defaultMeta: {
-        service: 'a-stats-app-backend', // A service name for easy filtering
+        service: 'a-stats-app-backend',
         timestamp: () => new Date().toISOString()
     },
 });

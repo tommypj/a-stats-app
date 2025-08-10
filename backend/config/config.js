@@ -1,10 +1,8 @@
 // backend/config/config.js
 
 exports.config = {
-    // Application settings
     app: {
         jsonLimit: '1mb',
-        // CRITICAL FIX: The allowedOrigins must match your new frontend URL
         allowedOrigins: process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : ['https://a-stats-2e54e.web.app'],
         nodeEnv: process.env.NODE_ENV || 'development'
     },
